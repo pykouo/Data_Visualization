@@ -1,29 +1,34 @@
 $(function(){
-	// 左側toolbox的開關
-	$(".switch").on('click', function(){
-		if(!$(this).parent('.toolbox').hasClass('open')){
-			$(this).parent('.toolbox').addClass('open');
+	$('.chartswitch').on('click',function(){
+		if($('.chart_cata').hasClass('open')){
+			$('.chart_cata').removeClass('open');
+			$(this).removeClass('open');
 		}else{
-			$(this).parent('.toolbox').removeClass('open');
+			$('.chart_cata').addClass('open');
+			$(this).addClass('open');
 		}
-	});	
-	//dynamic 設定一秒後出現刪除鈕 按其他地方就消失
+	});
+	$('.dashbordswitch').on('click',function(){
+		if($(this).hasClass('open')){
+			$('.dashboard_cata').removeClass('open');
+			$(this).removeClass('open');
+		}else{
+			$('.dashboard_cata').addClass('open');
+			$(this).addClass('open');
+		}
+	});
+	$('.dashboard_cata .fa-plus').on('click',function(){
+		var input = $('.dashboard_cata').find('input');
+		if(input.val()){
+			$('.dashboardlist').append("<li><i class='fa fa-times delete' aria-hidden='true'></i><span>"+input.val()+"<span></li>");
+			input.val('');
+		}
+	});
+	$(document).delegate('.dashboardlist .delete','click', function() {
+		$(this).parent('li').remove();
+	});
 	//點擊body關閉shake和刪除鈕
 	$('body').on('click', function(evt){
-		if(!$(evt.target).closest('.box').length) { //點擊處非box
-			$('.box').each(function(){
-				if($(this).hasClass('shake')){
-					$(this).removeClass('shake');
-					$(this).find('.delete').hide();
-				}
-			});
- 		}
- 		//左側toolbox按body也關閉
- 		if(!$(evt.target).closest('.toolbox').length) {
- 			if($('.toolbox').hasClass('open')){
- 				$('.toolbox').removeClass('open');
- 			}
- 		}
  		if(!$(evt.target).closest('.more').length) {
  			$('.more').each(function(){
  				$(this).find('.menu').hide();
@@ -45,11 +50,16 @@ $(function(){
 	$(document).delegate('.delete','click', function() {
 		$(this).parents('.box').remove();
 	});
-
+	$(document).delegate('.detail','click', function() {
+		thisbox = $(this).parents('.box');
+		$('.black_cover').show();
+		$('.detailbox').show();
+	});
 	//dynamic出現的edit按鈕
 	function edithide(){
 		$('.editbox .currenttype .type').val('');
 		$('.editbox .title').val('');
+		$('.editbox .source').val('');
 		$('.black_cover').hide();
 		$('.editbox').hide();
 		thisbox = undefined;
@@ -68,6 +78,7 @@ $(function(){
 	$('.black_cover').on('click', function() {
 		edithide();
 		optionhide();
+		$(".detailbox").hide();
 	});
 	$('.editbox .delete').on('click', function() {
 		edithide();
