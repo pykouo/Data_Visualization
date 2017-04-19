@@ -1,2 +1,4 @@
-[{"name": "iOS", "value": 700},
-{"name": "android", "value": 90}]
+[{"name": "android", "value": 300},
+    {"name": "ios", "value": 100},
+    {"name": "windows", "value": 300}
+]
