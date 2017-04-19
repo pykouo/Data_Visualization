@@ -1,0 +1,62 @@
+[
+	{
+		"name" : "ClientPortal",
+		"time" : "2017/04/14",
+		"value":30
+	},
+	{
+		"name" : "ClientPortal",
+		"time" : "2017/04/15",
+		"value":20
+	},
+	{
+		"name" : "ClientPortal",
+		"time" : "2017/04/16",
+		"value":10
+	},
+	{
+		"name" : "ClientPortal",
+		"time" : "2017/04/17",
+		"value":20
+	},
+	{
+		"name" : "ClientPortal",
+		"time" : "2017/04/18",
+		"value":35
+	},
+	{
+		"name" : "ClientPortal",
+		"time" : "2017/04/19",
+		"value":35
+	},{
+		"name" : "Expense",
+		"time" : "2017/04/14",
+		"value":20
+	},
+	{
+		"name" : "Expense",
+		"time" : "2017/04/15",
+		"value":10
+	},
+	{
+		"name" : "Expense",
+		"time" : "2017/04/16",
+		"value":5
+	},
+	{
+		"name" : "Expense",
+		"time" : "2017/04/17",
+		"value":10
+	},
+	{
+		"name" : "Expense",
+		"time" : "2017/04/18",
+		"value":15
+	},
+	{
+		"name" : "Expense",
+		"time" : "2017/04/19",
+		"value":18
+	}
+
+]
