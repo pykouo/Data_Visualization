@@ -293,7 +293,11 @@ input:focus {
   display: inline-block;
   background-color: @LightBg;
   -webkit-filter: drop-shadow(-1px -1px 2px @DarkGrey);
+  -moz-filter: drop-shadow(-1px -1px 2px @DarkGrey);
+  -ms-filter: drop-shadow(-1px -1px 2px @DarkGrey);
+  -o-filter: drop-shadow(-1px -1px 2px @DarkGrey);
   filter: drop-shadow(-1px -1px 2px @DarkGrey);
+  
   border-radius: @BorderRadius;
   position: relative;
   cursor: pointer;
