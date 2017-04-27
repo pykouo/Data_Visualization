@@ -77,17 +77,12 @@ $(function() {
     start: function(event, ui) {
       var size = ui.item.attr("class").substr(4);
       $(".ui-sortable-placeholder").addClass(size);
-      console.log($("." + size).width());
-      $(".ui-sortable-placeholder").css('width', ui.item.width() + 'px');
-      $(".ui-sortable-placeholder").css('height', ui.item.height() + 'px');
     },
     sort: function(event, ui) {
-      var size = ui.item.attr("class").substr(4);
-      $(".ui-sortable-placeholder").css('width', ui.item.width() + 'px');
+      $(".ui-sortable-placeholder").css('width', ui.item.width()-50 + 'px');
       $(".ui-sortable-placeholder").css('height', ui.item.height() + 'px');
     },
     stop: function(event, ui) {
-      // ui.item.toggleClass("highlight");
       console.log($(".ui-sortable-placeholder").width());
 
     }
